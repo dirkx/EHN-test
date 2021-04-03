@@ -96,9 +96,8 @@ class EHNTests: XCTestCase {
         // CBOR decode this (Really COSE wrapper AKA CWT)
         let cbor : [UInt8] = decompressed.getBytes(at: 0, length: decompressedBytesWritten) ?? []
         let cose = try! CBOR.decode(cbor)!
-        // let t : CBOR.Tag = cose.
-        // //            return CBOR.tagged(CBOR.Tag(rawValue: tag), item)
         dump(cose);
+        // (cose as? CBOR.Tag).rawValue
 
     }
 
