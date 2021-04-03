@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,9 @@
 		3265B5FF2615FA6F00BFB10C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3265B5FD2615FA6F00BFB10C /* LaunchScreen.storyboard */; };
 		3265B60A2615FA7000BFB10C /* EHNTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3265B6092615FA7000BFB10C /* EHNTests.swift */; };
 		3265B6152615FA7000BFB10C /* EHNUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3265B6142615FA7000BFB10C /* EHNUITests.swift */; };
+		32C5D19B2615FC16001F925D /* SwiftCBOR in Frameworks */ = {isa = PBXBuildFile; productRef = 32C5D19A2615FC16001F925D /* SwiftCBOR */; };
+		32C5D1A12616077F001F925D /* GRPC in Frameworks */ = {isa = PBXBuildFile; productRef = 32C5D1A02616077F001F925D /* GRPC */; };
+		32C5D1A32616077F001F925D /* CGRPCZlib in Frameworks */ = {isa = PBXBuildFile; productRef = 32C5D1A22616077F001F925D /* CGRPCZlib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32C5D1A12616077F001F925D /* GRPC in Frameworks */,
+				32C5D19B2615FC16001F925D /* SwiftCBOR in Frameworks */,
+				32C5D1A32616077F001F925D /* CGRPCZlib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +150,11 @@
 			dependencies = (
 			);
 			name = EHN;
+			packageProductDependencies = (
+				32C5D19A2615FC16001F925D /* SwiftCBOR */,
+				32C5D1A02616077F001F925D /* GRPC */,
+				32C5D1A22616077F001F925D /* CGRPCZlib */,
+			);
 			productName = EHN;
 			productReference = 3265B5EF2615FA6F00BFB10C /* EHN.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +226,10 @@
 				Base,
 			);
 			mainGroup = 3265B5E62615FA6F00BFB10C;
+			packageReferences = (
+				32C5D1992615FC16001F925D /* XCRemoteSwiftPackageReference "SwiftCBOR" */,
+				32C5D19F2616077F001F925D /* XCRemoteSwiftPackageReference "grpc-swift" */,
+			);
 			productRefGroup = 3265B5F02615FA6F00BFB10C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -587,6 +602,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		32C5D1992615FC16001F925D /* XCRemoteSwiftPackageReference "SwiftCBOR" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:unrelentingtech/SwiftCBOR.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		32C5D19F2616077F001F925D /* XCRemoteSwiftPackageReference "grpc-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:grpc/grpc-swift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		32C5D19A2615FC16001F925D /* SwiftCBOR */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 32C5D1992615FC16001F925D /* XCRemoteSwiftPackageReference "SwiftCBOR" */;
+			productName = SwiftCBOR;
+		};
+		32C5D1A02616077F001F925D /* GRPC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 32C5D19F2616077F001F925D /* XCRemoteSwiftPackageReference "grpc-swift" */;
+			productName = GRPC;
+		};
+		32C5D1A22616077F001F925D /* CGRPCZlib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 32C5D19F2616077F001F925D /* XCRemoteSwiftPackageReference "grpc-swift" */;
+			productName = CGRPCZlib;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3265B5E72615FA6F00BFB10C /* Project object */;
 }
